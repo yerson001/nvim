@@ -41,7 +41,7 @@ nnoremap <C-tab> >>
 "nnoremap <C-f> :FZF<CR>
 "map <C-m> :FZF<CR>
 let g:NERDTreeChDirMode = 2  " Cambia el directorio actual al nodo padre actual
-map <leader>n :NERDTreeToggle<CR>
+map <leader>m :NERDTreeToggle<CR>
 map <C-V> :vsplit<CR>
 map <C-p> :split<CR>
 map <C-j> :FloatermNew<CR>
