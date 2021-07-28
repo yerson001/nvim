@@ -81,7 +81,12 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-rhubarb'
         Plug 'junegunn/gv.vim'
-        Plug 'dyng/ctrlsf.vim' 
+        Plug 'dyng/ctrlsf.vim'
+        ""new white theme"
+        Plug 'sonph/onehalf', { 'rtp': 'vim' }
+        ""other them"
+        Plug 'glepnir/oceanic-material'
+
 	let g:signify_sign_add               = '+'
         let g:signify_sign_delete            = '_'
         let g:signify_sign_delete_first_line = '‾'
@@ -222,6 +227,24 @@ let g:sonokai_style = 'andromeda'
 " let g:sonokai_style = 'atlantis'
 "let g:sonokai_style = 'shusia'
 
+"**************onehalf theme
+syntax on
+"set t_Co=256
+"set cursorline
+"colorscheme onehalflight
+"colorscheme onehalfdark
+"let g:airline_theme='onehalfdark'
+" lightline
+"let g:lightline = { 'colorscheme': 'onehalfdark' }
+
+"***************endl***********
+
+"*****************oceanic-material
+"set background=dark
+"colorscheme oceanic_material
+" g:oceanic_material_transparent_background
+"**************************
+
 colorscheme sonokai
 " colorscheme onedark
 "colorscheme gruvbox
@@ -229,7 +252,7 @@ colorscheme sonokai
 " colorscheme tokyonight
 set guifont=Inconsolata\ 14
 set fillchars+=vert:\|
-" set background=dark
+set background=dark
 "colorscheme deus
 "    colorscheme monokai_pro
 " colorscheme base16-gruvbox-dark-hard
@@ -237,8 +260,8 @@ set fillchars+=vert:\|
 "  colorscheme tender
 "  colorscheme moonfly
 "colorscheme shades_of_purple
-"let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_contrast_dark = "medium"
+let g:gruvbox_contrast_dark = "hard"
+"let g:gruvbox_contrast_dark = "medium"
 "let g:gruvbox_contrast_dark = "soft"
 " ==============config=======deus=======
 set t_Co=256
