@@ -68,7 +68,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         Plug 'iamcco/sran.nvim',{'do':{ -> sran#util#install()}}
         Plug 'iamcco/clock.nvim'
         Plug 'tranvansang/octave.vim'
+        "***************signifi********
         Plug 'mhinz/vim-signify'
+        "******************************
         Plug 'tpope/vim-fugitive'
         Plug 'tpope/vim-rhubarb'
         Plug 'junegunn/gv.vim'
@@ -354,3 +356,8 @@ endfunction
 
 set statusline=%{LinterStatus()}
 "numeros relatvos
+
+"***************SIGNIFI CONFIG**************************
+let g:startify_session_dir = '~/.config/nvim/session'
+let g:startify_session_autoload = 1
+"*********************************************************
