@@ -21,7 +21,7 @@ nnoremap <S-TAB> :bprevious<CR>
 " nnoremap <C-s> :w<CR>
 map <leader>ss :w<CR>
 " Alternate way to quit
-map <leader>qq :q!<CR>
+map <leader>qq :wq<CR>
 " Use control-c instead of escape
 nnoremap <C-c> <Esc>
 " <TAB>: completion.
