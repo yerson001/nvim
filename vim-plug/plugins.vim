@@ -2,7 +2,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    endif
-
   call plug#begin('~/.config/nvim/autoload/plugged')
         Plug 'dense-analysis/ale'
         Plug 'safv12/andromeda.vim'
@@ -11,16 +10,16 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         Plug 'machakann/vim-highlightedyank'
         Plug 'ayu-theme/ayu-vim' " or other package manager
 
-        Plug 'tpope/vim-commentary'"este en un comentario
+        Plug 'tpope/vim-commentary'
         Plug 'shinchu/lightline-gruvbox.vim'
-        Plug 'sheerun/vim-polyglot'
+        "Plug 'sheerun/vim-polyglot'
         "
 	"plug 'andreyorst/base16-gruvbox'
         Plug 'tpope/vim-repeat'
         Plug 'kqito/vim-easy-replace'
-        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+"        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
         Plug 'iamcco/mathjax-support-for-mkdp'
-        Plug 'iamcco/markdown-preview.vim'
+"        Plug 'iamcco/markdown-preview.vim'
         Plug 'nvim-treesitter/highlight.lua'
 	Plug 'vim-pandoc/vim-pandoc-syntax'
 	Plug 'puremourning/vimspector'
@@ -51,7 +50,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
       	
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
-	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+	"Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
         Plug 'Yggdroot/indentLine'
 	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
@@ -76,7 +75,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         Plug 'junegunn/gv.vim'
         Plug 'frazrepo/vim-rainbow'
         Plug 'tpope/vim-sleuth'
-        Plug 'editorconfig/editorconfig-vim'
+"         Plug 'editorconfig/editorconfig-vim'
         Plug 'enricobacis/vim-airline-clock'
         Plug 'airblade/vim-gitgutter'
 	Plug 'mhinz/vim-signify'
@@ -89,7 +88,11 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
         ""other them"
         Plug 'glepnir/oceanic-material'
 
-	let g:signify_sign_add               = '+'
+      "*********snipes********
+"        Plug 'SirVer/ultisnips'
+"         Plug 'honza/vim-snippets' 
+       "***********************
+        let g:signify_sign_add               = '+'
         let g:signify_sign_delete            = '_'
         let g:signify_sign_delete_first_line = '‾'
         let g:signify_sign_change            = '~'
@@ -217,6 +220,12 @@ set tabstop=2
 set shiftwidth=2 
 "=======================================================
 call plug#end()
+
+"************************SNIPETS*****************************
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"************************************************************
 
 
 "=============theme========="
