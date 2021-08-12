@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
   Plug 'rhysd/vim-color-spring-night'
   Plug 'majutsushi/tagbar'"opcional estrucutra"
-  Plug 'enricobacis/vim-airline-clock'
+  "Plug 'enricobacis/vim-airline-clock'
   Plug 'airblade/vim-gitgutter'
   "**********end_adicional******"
   "******************fzf*********"
@@ -46,12 +46,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'alvan/vim-closetag'
   Plug 'sheerun/vim-polyglot'
-Plug 'chrisbra/Colorizer'
-Plug 'KabbAmine/vCoolor.vim'
+  Plug 'chrisbra/Colorizer'
+  Plug 'KabbAmine/vCoolor.vim'
   "***********************************************"
 
   "**************************auto-completado**************"
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
   Plug 'othree/html5.vim', { 'for': 'html' }
@@ -60,6 +60,7 @@ Plug 'KabbAmine/vCoolor.vim'
   Plug 'easymotion/vim-easymotion'
   Plug 'sainnhe/sonokai'
   Plug 'voldikss/vim-floaterm'
+  Plug 'dense-analysis/ale'
   "*******************************************************"
 
 call plug#end()
@@ -99,8 +100,8 @@ set termguicolors
 
 "************************SNIPETS*****************************
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<leader>n"
+let g:UltiSnipsJumpBackwardTrigger="<leader>b"
 "************************************************************
 "**********************airline¨*****************************
 let g:airline_powerline_fonts = 1
@@ -110,7 +111,6 @@ let g:airline_section_warning = ''
         set showtabline=2
         set noshowmode
 let g:lightline = {
-      \ 'colorscheme': 'hydrangea',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ },
@@ -126,6 +126,12 @@ endfunction
 "**********************endairlineconfig*********************
 
 "*************************COLOR_THEME**********************"
+function! ColorSonokai()
+  let g:sonokai_style = 'andromeda'
+  let g:airline_theme = 'sonokai'
+  color sonokai
+endfunction
+
 
 " Dracula Mode (Dark)
 function! ColorDracula()
@@ -159,6 +165,7 @@ nmap <leader>1 :call ColorDracula()<CR>
 nmap <leader>2 :call ColorSeoul256()<CR>
 nmap <leader>3 :call ColorForgotten()<CR>
 nmap <leader>4 :call ColorZazen()<CR>
+nmap <leader>5 :call ColorSonokai()<CR>
 "**********************************************************"
 "*****************tagbar***********************************"
 let g:tagbar_width = 30
