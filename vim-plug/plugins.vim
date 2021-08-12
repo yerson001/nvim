@@ -2,116 +2,180 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    endif
-  call plug#begin('~/.config/nvim/autoload/plugged')
-        Plug 'dense-analysis/ale'
-        Plug 'safv12/andromeda.vim'
-        Plug 'ghifarit53/tokyonight-vim'
-        Plug 'joshdick/onedark.vim'
-        Plug 'machakann/vim-highlightedyank'
-        Plug 'ayu-theme/ayu-vim' " or other package manager
+"open folder -> explorer.exe ."
+call plug#begin('~/.config/nvim/autoload/plugged')
+  "************snipes********
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets' 
+  "***************************
+  
+  "***************airline*******
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'bryanmylee/vim-colorscheme-icons'
+  "***************endairline****
+  "********theme******
+  Plug 'dracula/vim',{'as':'dracula'}
+  "*********end_theme***********"
 
-        Plug 'tpope/vim-commentary'
-        Plug 'shinchu/lightline-gruvbox.vim'
-        "Plug 'sheerun/vim-polyglot'
-        "
-	"plug 'andreyorst/base16-gruvbox'
-        Plug 'tpope/vim-repeat'
-        Plug 'kqito/vim-easy-replace'
-"        Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-        Plug 'iamcco/mathjax-support-for-mkdp'
-"        Plug 'iamcco/markdown-preview.vim'
-        Plug 'nvim-treesitter/highlight.lua'
-	Plug 'vim-pandoc/vim-pandoc-syntax'
-	Plug 'puremourning/vimspector'
-	Plug 'phanviet/vim-monokai-pro'
-	Plug 'Rigellute/shades-of-purple.vim'
-	Plug 'bluz71/vim-moonfly-colors'
-	Plug 'jacoborus/tender.vim'
-	 Plug 'tpope/vim-commentary'
-	Plug 'nightsense/carbonized'
-	Plug 'ajmwagar/vim-deus'
-	Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-            \ Plug 'ryanoasis/vim-devicons'
-	Plug 'ryanoasis/vim-devicons'
+  "**********adicional**********"
+  Plug 'junegunn/goyo.vim'"no necesario"
+  Plug 'junegunn/seoul256.vim'
+  Plug 'junegunn/rainbow_parentheses.vim'"no necesario"
+  Plug 'nightsense/forgotten'"themas"
+  Plug 'zaki/zazen'
+  Plug 'yuttie/hydrangea-vim'
+  Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
+  Plug 'rhysd/vim-color-spring-night'
+  Plug 'majutsushi/tagbar'"opcional estrucutra"
+  Plug 'enricobacis/vim-airline-clock'
+  Plug 'airblade/vim-gitgutter'
+  "**********end_adicional******"
+  "******************fzf*********"
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  "******************************"
 
-	Plug 'sheerun/vim-polyglot'
-        " File Explorer
-        Plug 'scrooloose/NERDTree'
-        " Auto pairs for '(' '[' '{'
-        Plug 'jiangmiao/auto-pairs'
-      	Plug 'joshdick/onedark.vim'
-      	
-	Plug 'sainnhe/sonokai'
-	Plug 'morhetz/gruvbox'
-	Plug 'easymotion/vim-easymotion'
-      	
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
-	"Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-        Plug 'Yggdroot/indentLine'
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
-	Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-	Plug 'othree/html5.vim', { 'for': 'html' }
-	Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
-	Plug 'airblade/vim-rooter'
-        Plug 'ryanoasis/vim-webdevicons'
-        Plug 'critiqjo/lldb.nvim'
-        Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': ':UpdateRemotePlugins'}
-	Plug 'voldikss/vim-floaterm'
-        Plug 'iamcco/sran.nvim',{'do':{ -> sran#util#install()}}
-        Plug 'iamcco/clock.nvim'
-        Plug 'tranvansang/octave.vim'
-        "***************signifi********
-        Plug 'mhinz/vim-signify'
-        "******************************
-        Plug 'tpope/vim-fugitive'
-        Plug 'tpope/vim-rhubarb'
-        Plug 'junegunn/gv.vim'
-        Plug 'frazrepo/vim-rainbow'
-        Plug 'tpope/vim-sleuth'
-"         Plug 'editorconfig/editorconfig-vim'
-        Plug 'enricobacis/vim-airline-clock'
-        Plug 'airblade/vim-gitgutter'
-	Plug 'mhinz/vim-signify'
-        Plug 'tpope/vim-fugitive'
-        Plug 'tpope/vim-rhubarb'
-        Plug 'junegunn/gv.vim'
-        Plug 'dyng/ctrlsf.vim'
-        ""new white theme"
-        Plug 'sonph/onehalf', { 'rtp': 'vim' }
-        ""other them"
-        Plug 'glepnir/oceanic-material'
+  "***********algunos_importantes*****************"
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'mhinz/vim-signify'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'alvan/vim-closetag'
+  Plug 'sheerun/vim-polyglot'
+Plug 'chrisbra/Colorizer'
+Plug 'KabbAmine/vCoolor.vim'
+  "***********************************************"
 
-      "*********snipes********
-"        Plug 'SirVer/ultisnips'
-"         Plug 'honza/vim-snippets' 
-       "***********************
-        let g:signify_sign_add               = '+'
-        let g:signify_sign_delete            = '_'
-        let g:signify_sign_delete_first_line = '‾'
-        let g:signify_sign_change            = '~'
-	set updatetime=250
-        let g:gitgutter_realtime = 1
-        let g:gitguter_eager = 1
- " **************************enable powerline fonts****************
-	let g:airline_theme = 'sonokai'
-" 	let g:airline_theme = 'shades_of_purple'
-	"let g:airline_theme = 'deus'
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline_powerline_fonts = 1
+  "**************************auto-completado**************"
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/neco-syntax'  " Fuente general de auto completado
+  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+  Plug 'othree/html5.vim', { 'for': 'html' }
+  Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+  Plug 'kqito/vim-easy-replace'
+  Plug 'easymotion/vim-easymotion'
+  Plug 'sainnhe/sonokai'
+  Plug 'voldikss/vim-floaterm'
+  "*******************************************************"
+
+call plug#end()
+
+"**************leader*********"
+let mapleader=","
+nmap <leader>g :Goyo<CR>
+"*****************************"
+
+"*******************themes_and_color*********************"
+function! TransparentBackground()
+    highlight Normal guibg=NONE ctermbg=NONE
+    highlight LineNr guibg=NONE ctermbg=NONE
+    set fillchars+=vert:\│
+    highlight VertSplit gui=NONE guibg=NONE guifg=#444444 cterm=NONE ctermbg=NONE ctermfg=gray
+endfunction
+
+function! DraculaPMenu()
+    highlight Pmenu guibg=#363948
+    highlight PmenuSbar guibg=#363948
+endfunction
+
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme dracula call DraculaPMenu()
+    "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
+augroup END
+
+" Main Coloring Configurations
+syntax on
+color dracula
+
+" Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
+set termguicolors
+
+"**********************colorconfig***************************"
+
+"************************SNIPETS*****************************
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"************************************************************
+"**********************airline¨*****************************
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+ let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_warning = ''
         set showtabline=2
         set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'hydrangea',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator':    { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' },
+      \ }
 
 
-"=========================================================
+function! ColorDracula()
+  letg:airline_theme = 'dracula'
+  color dracula
+endfunction
+"**********************endairlineconfig*********************
 
-set termguicolors
+"*************************COLOR_THEME**********************"
+
+" Dracula Mode (Dark)
+function! ColorDracula()
+    let g:airline_theme='dracula'
+    color dracula
+endfunction
+
+" Seoul256 Mode (Dark & Light)
+function! ColorSeoul256()
+    let g:airline_theme='silver'
+    color seoul256
+endfunction
+
+" Forgotten Mode (Light)
+function! ColorForgotten()
+    " Other light airline themes: tomorrow, silver, alduin
+    let g:airline_theme='tomorrow'
+    " Other light colors: forgotten-light, nemo-light
+    color forgotten-light
+endfunction
+
+" Zazen Mode (Black & White)
+function! ColorZazen()
+    let g:airline_theme='minimalist'
+    color zazen
+endfunction
+
+"******************keys******************************"
+nmap <leader>ea :AirlineTheme 
+nmap <leader>1 :call ColorDracula()<CR>
+nmap <leader>2 :call ColorSeoul256()<CR>
+nmap <leader>3 :call ColorForgotten()<CR>
+nmap <leader>4 :call ColorZazen()<CR>
+"**********************************************************"
+"*****************tagbar***********************************"
+let g:tagbar_width = 30
+nmap <leader>w :TagbarToggle<CR>
+"**********************************************************"
+
+"******************NERTHRE**************************"
+let NERDTreeShowHidden=1
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd VimEnter *
+    \   if !argc()
+    \ |   Startify
+    \ |   NERDTree
+    \ |   wincmd w
+    \ | endif
+
 let g:indentLine_fileTypeExclude = ['text','sh','help','terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*','term:.*']
 
@@ -121,61 +185,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 let g:NERDTreeDirArrowExpandable = '📥'
 let g:NERDTreeDirArrowCollapsible = '🔻'
-
-"auto completo
-let g:deoplete#enable_at_startup = 1
-"Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)augroup deopleteCompleteDoneAu
-  autocmd!
-  autocmd CompleteDone * silent! pclose!
-augroup END
-
-set encoding=utf8
-set clipboard^=unnamed,unnamedplus
-
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
-let g:webdevicons_enable_airline_tabline = 1
-let g:webdevicons_enable_airline_statusline = 1
-
-"============para los icons===================""
-let g:lightline = {
-      \ 'component_function': {
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \ }
-      \ }
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
-endfunction
-
-"==============FZF=====================
-let g:fzf_buffers_jump = 1
-
-"=============CLOCK============
-let g:clockn_enable = 0 
-"let g:clockn_color = #000000
-let g:clockn_winblend = 100
-"highlight ClockNormal guifg = #000000
-let g:clockn_to_top = 1
-let g:clockn_to_right = 1
-":ClockEnable
-":ClockDisable
-"==============for github===============
-" Change these if you want
-let g:signify_sign_add               = '✳️'
-let g:signify_sign_delete            = '✴️'
-let g:signify_sign_delete_first_line = '‾'
-let g:signify_sign_change            = '💠'
-
-" I find the numbers disctracting
-let g:signify_sign_show_count = 0
-let g:signify_sign_show_text = 1
-
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'♻️',
                 \ 'Staged'    :'✚',
@@ -189,22 +198,89 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Unknown'   :'⁉️',
                 \ }
 
-let mapleader=","
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+"****************************************************"
 
-"===========================templates=============
-nnoremap ,ccp :-1read $HOME/.config/.cp.cpp<CR>
-nnoremap ,cpp :-1read $HOME/.config/files/main.cpp<CR>
-nnoremap ,jj :-1read $HOME/.config/files/ht.html<CR>
-"=================================================
-"==============navegando con guider===========
-inoremap ;gui <++>
-inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-"vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-map <leader><leader> <Esc>/<++><Enter>"_c4l
-"=================================================
-set encoding=UTF-8
+"************************vim-signify**************"
+let g:signify_sign_add = '│'
+let g:signify_sign_delete = '│'
+let g:signify_sign_change = '│'
+hi DiffDelete guifg=#ff5555 guibg=none
+"*************************************************"
+"****************easy aling*******************"
+" EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)"*=  or 2= or ** or -\ or *,"
+"*******************************************"
 
-" rainboar
+"********************vim-closetag******************"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+":CloseTagToggleBuffer
+":CloseTagEnableBuffer
+":CloseTagDisableBuffer
+"***********************vim-closetag**************"
+
+"********************auto-completado****************"
+let g:deoplete#enable_at_startup = 1
+"Cerrar automaticamente la ventana de vista previa (donde se muestra documentación, si existe)augroup deopleteCompleteDoneAu
+"  autocmd!
+"  autocmd CompleteDone * silent! pclose!
+"augroup END
+set encoding=utf8
+"set clipboard^=unnamed,unnamedplus
+"***************************************************"
+
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
+
 let g:rainbow_active = 1
 let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
@@ -218,84 +294,21 @@ let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'green', 'magenta
 set expandtab
 set tabstop=2
 set shiftwidth=2 
-"=======================================================
-call plug#end()
-
-"************************SNIPETS*****************************
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"************************************************************
+"**************************fzf************************"
+let g:fzf_buffers_jump = 1
+"********************************************************"
 
 
-"=============theme========="
-"hi Comment cterm=italic
-let g:onedark_hide_endofbuffer=1
-" let g:onedark_terminal_italics=1
-let g:onedark_termcolors=256
-
-let g:sonokai_style = 'andromeda'
-" let g:sonokai_style = 'atlantis'
-"let g:sonokai_style = 'shusia'
-
-"**************onehalf theme
-syntax on
-"set t_Co=256
-"set cursorline
-"colorscheme onehalflight
-"colorscheme onehalfdark
-"let g:airline_theme='onehalfdark'
-" lightline
-"let g:lightline = { 'colorscheme': 'onehalfdark' }
-
-"***************endl***********
-
-"*****************oceanic-material
-"set background=dark
-"colorscheme oceanic_material
-" g:oceanic_material_transparent_background
-"**************************
-
-colorscheme sonokai
-" colorscheme onedark
-"colorscheme gruvbox
-"colorscheme andromeda 
-" colorscheme tokyonight
-set guifont=Inconsolata\ 14
-set fillchars+=vert:\|
-set background=dark
-"colorscheme deus
-"    colorscheme monokai_pro
-" colorscheme base16-gruvbox-dark-hard
-" colorscheme carbonized-dark
-"  colorscheme tender
-"  colorscheme moonfly
-"colorscheme shades_of_purple
-let g:gruvbox_contrast_dark = "hard"
-"let g:gruvbox_contrast_dark = "medium"
-"let g:gruvbox_contrast_dark = "soft"
-" ==============config=======deus=======
-set t_Co=256
-set termguicolors
-
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-"set background=dark    " Setting dark mode
-"colorscheme deus
-" let g:deus_termcolors=256
-
-"=============easymotion============
-nmap <leader>s <Plug>(easymotion-s2)
-
+"***************compile**********************"
 autocmd FileType javascript nnoremap <buffer> <F5> :w<esc>:FloatermNew node %<CR>
 autocmd FileType c nnoremap <buffer> <F5> :w<esc>:FloatermNew gcc % && ./a.out && rm a.out<CR>
 autocmd FileType cpp nnoremap <buffer> <F5> :w<esc>:FloatermNew g++ % && ./a.out && rm a.out<CR>
 autocmd FileType python nnoremap <buffer> <F5> :w<esc>:FloatermNew python3 %<CR>
 autocmd Filetype java nnoremap <buffer> <F5> :w <esc> !javac % && java %:r <CR>
 autocmd FileType hs nnoremap <buffer> <F5> :w<esc>:FloatermNew ghc %<CR>
+"********************************************"
 
-" Commenting blocks of code.
+"**************commet*******************"
 augroup commenting_blocks_of_code
   autocmd!
   autocmd FileType c,cpp,java,scala,javascript let b:comment_leader = '// '
@@ -309,18 +322,10 @@ augroup commenting_blocks_of_code
 augroup END
 noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,u :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
-augroup pandoc_syntax
-    au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
-augroup END 
+"***********************************¨****"
 
-augroup pandoc_syntax
-  autocmd! FileType vimwiki set syntax=markdown.pandoc
-augroup END
 
-if (has("termguicolors"))
- set termguicolors
-endif
-"""" enable the theme floater term config
+"**********************FloatermNew****************"
 nnoremap <F7> :FloatermToggle <CR>
 let g:floaterm_keymap_toggle = '<F7>'
 let g:floaterm_keymap_next = '<F4>'
@@ -329,13 +334,7 @@ let g:floaterm_keymap_new = '<F3>'
 hi Floaterm guibg=black
 
 nmap <Leader>r :EasyReplaceWord<CR>
-let g:python_highlight_all = 1
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
-let g:gruvbox_invert_selection=0
-xnoremap <k> dkP`[V`]
-xnoremap <j> dp`[V`]
-
+"***************************************************"
 
 "===================ALE=============
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
@@ -364,9 +363,3 @@ function! LinterStatus() abort
 endfunction
 
 set statusline=%{LinterStatus()}
-"numeros relatvos
-
-"***************SIGNIFI CONFIG**************************
-let g:startify_session_dir = '~/.config/nvim/session'
-let g:startify_session_autoload = 1
-"*********************************************************
