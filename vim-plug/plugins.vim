@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim' }
   Plug 'rhysd/vim-color-spring-night'
   Plug 'majutsushi/tagbar'"opcional estrucutra"
-  "Plug 'enricobacis/vim-airline-clock'
+  Plug 'enricobacis/vim-airline-clock'   "este el plugins para la hora"
   Plug 'airblade/vim-gitgutter'
   "**********end_adicional******"
   "******************fzf*********"
@@ -105,19 +105,19 @@ let g:UltiSnipsJumpBackwardTrigger="<leader>b"
 "************************************************************
 "**********************airline¨*****************************
 let g:airline_powerline_fonts = 1
-let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
- let g:airline#extensions#tabline#enabled = 1
-let g:airline_section_warning = ''
-        set showtabline=2
-        set noshowmode
-let g:lightline = {
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator':    { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ }
-
+"let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_section_warning = ''
+set showtabline=2
+set noshowmode
+" let g:lightline = {
+"       \ 'component': {
+"       \   'readonly': '%{&readonly?"":""}',
+"       \ },
+"       \ 'separator':    { 'left': '', 'right': '' },
+"       \ 'subseparator': { 'left': '', 'right': '' },
+"       \ }
+" 
 
 function! ColorDracula()
   letg:airline_theme = 'dracula'
