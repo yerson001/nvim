@@ -75,8 +75,50 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'sainnhe/gruvbox-material'
   "****************ENDTHEMES*******************************
+  "***********************LSP FOR NEOVIM**********************
+   "Plug 'neovim/nvim-lspconfig'
+   Plug 'nvim-lua/completion-nvim'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+   " Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+   "***********************************************************
 
 call plug#end()
+
+"****************LUA**********************
+autocmd BufEnter * lua require'completion'.on_attach()
+let g:deoplete#enable_at_startup = 1
+  autocmd!
+  autocmd CompleteDone * silent! pclose!
+augroup END
+
+set encoding=utf8
+set clipboard^=unnamed,unnamedplus
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" call deoplete#custom#option({
+"   \'auto_complete_delay':200,
+"   \'amart_case':v:true,
+"   \
+" })
+" 
+" call deoplete#custom#option('source',{
+"   \ '_':['buffer'],
+"   \ 'cpp':['buffer','tag'],
+"   \})
+"******************************************
+
 
 "**************leader*********"
 let mapleader=","
