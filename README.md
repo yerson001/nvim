@@ -3,6 +3,10 @@
 ~~~
 instalar nevim
 ~~~
+## Configurar snnipet
+~~~
+:UltiSnipt....<TAB>
+~~~
 
 ## En la carpeta .config
 ~~~
