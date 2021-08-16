@@ -61,7 +61,20 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'sainnhe/sonokai'
   Plug 'voldikss/vim-floaterm'
   Plug 'dense-analysis/ale'
+
   "*******************************************************"
+  "*******************THEMES*******************************
+  Plug 'ajmwagar/vim-deus' 
+  Plug 'phanviet/vim-monokai-pro'
+  Plug 'endel/vim-github-colorscheme' " debe ser el theme github"
+  Plug 'glepnir/oceanic-material' 
+  Plug 'd11wtq/macvim256.vim'
+  Plug 'asenchi/whitespace-vim'
+  Plug 'Rigellute/shades-of-purple.vim'
+  Plug 'dim13/smyck.vim'
+  Plug 'morhetz/gruvbox'
+  Plug 'sainnhe/gruvbox-material'
+  "****************ENDTHEMES*******************************
 
 call plug#end()
 
@@ -92,6 +105,16 @@ augroup END
 " Main Coloring Configurations
 syntax on
 color dracula
+"colorscheme dracula
+"colorscheme deus
+"colorscheme monokai_pro 
+"colorscheme github 
+" colorscheme oceanic_material 
+"set background=light
+"colorscheme macvim256 
+"colorscheme whitespace
+"colorscheme shades_of_purple
+" colorscheme smyck 
 
 " Enable True Color Support (ensure you're using a 256-color enabled $TERM, e.g. xterm-256color)
 set termguicolors
@@ -110,14 +133,6 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline_section_warning = ''
 set showtabline=2
 set noshowmode
-" let g:lightline = {
-"       \ 'component': {
-"       \   'readonly': '%{&readonly?"":""}',
-"       \ },
-"       \ 'separator':    { 'left': '', 'right': '' },
-"       \ 'subseparator': { 'left': '', 'right': '' },
-"       \ }
-" 
 
 function! ColorDracula()
   letg:airline_theme = 'dracula'
@@ -141,8 +156,8 @@ endfunction
 
 " Seoul256 Mode (Dark & Light)
 function! ColorSeoul256()
-    let g:airline_theme='silver'
-    color seoul256
+    let g:airline_theme='dracula'
+    color shades_of_purple 
 endfunction
 
 " Forgotten Mode (Light)
@@ -150,10 +165,36 @@ function! ColorForgotten()
     " Other light airline themes: tomorrow, silver, alduin
     let g:airline_theme='tomorrow'
     " Other light colors: forgotten-light, nemo-light
-    color forgotten-light
+    color github 
 endfunction
 
 " Zazen Mode (Black & White)
+function! ColorOceanic()
+    let g:airline_theme='dracula'
+    color oceanic_material 
+endfunction
+
+function! ColorMolokai()
+  let g:airline_theme = 'sonokai'
+  color monokai_pro
+endfunction
+
+function! ColorDeus()
+"   let g:airline_theme = 'sonokai'
+  color deus 
+endfunction
+
+function! ColorGrux()
+  let g:gruvbox_material_background = 'medium' "hard medium"
+  color gruvbox
+endfunction
+
+function! ColorMaterial()
+"  set background=dark "light"
+  let g:gruvbox_material_background = 'hard' "hard medium"
+  color gruvbox-material
+endfunction
+
 function! ColorZazen()
     let g:airline_theme='minimalist'
     color zazen
@@ -161,11 +202,16 @@ endfunction
 
 "******************keys******************************"
 nmap <leader>ea :AirlineTheme 
+nmap <leader>0 :call ColorOceanic()<CR>
 nmap <leader>1 :call ColorDracula()<CR>
 nmap <leader>2 :call ColorSeoul256()<CR>
 nmap <leader>3 :call ColorForgotten()<CR>
 nmap <leader>4 :call ColorZazen()<CR>
 nmap <leader>5 :call ColorSonokai()<CR>
+nmap <leader>6 :call ColorMolokai()<CR>
+nmap <leader>7 :call ColorDeus()<CR>
+nmap <leader>8 :call ColorGrux()<CR>
+nmap <leader>9 :call ColorMaterial()<CR>
 "**********************************************************"
 "*****************tagbar***********************************"
 let g:tagbar_width = 30
@@ -328,7 +374,7 @@ augroup commenting_blocks_of_code
   autocmd FileType hs             let b:comment_leader = '--'
 augroup END
 noremap <silent> ,c :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
-noremap <silent> ,u :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+noremap <silent> ,v :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 "***********************************¨****"
 
 
