@@ -81,6 +81,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Yggdroot/indentLine'
    " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -217,7 +218,7 @@ function! ColorOceanic()
 endfunction
 
 function! ColorMolokai()
-  let g:airline_theme = 'sonokai'
+  let g:airline_theme = 'dracula'
   color monokai_pro
 endfunction
 
