@@ -1,0 +1,33 @@
+snippet foo "clase cpp" b
+class $1{
+    public:
+      $1(${2:args});
+      ${3:type_data}
+      ~$1();
+    private:
+};
+endsnippet
+
+snippet fun "function" i
+${1:Type} ${2:function_name}(${3:args})
+{
+  ${4:args}
+}
+endsnippet
+
+
+snippet fori "for" b
+for(int i=${1:start}; i<${2:end}; ++i)
+{
+  ${3:args}
+}
+endsnippet
+
+snippet cout "print " b
+cout <<"${1:text}"<<endl;
+endsnippet
+
+snippet macro "macros" b
+#define debug(a) cout<<#a<<" = "<<a<<endl;
+#define FORN(i,a,n) for(int (i)=(a); (i)<(n);++(i))
+endsnippet
