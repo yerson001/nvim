@@ -50,12 +50,12 @@ map <C-o> :IndentLinesToggle<CR>
 map <f6> :vnew<CR>
 " nnoremap h f
 " vnoremap h 
-map f <Left>
-map j <Up>
-map l <Right>
-map k <Down>
-map i <insert>
-"map <C-d>:NERDTreeFind<CR>
+ map j <Left>
+map w <Up>
+" map l <Right>
+ map k <Down>
+" map i <insert>
+" "map <C-d>:NERDTreeFind<CR>
 "map <C-v> :p<CR>
 "map <C-f> :BLines<CR>
 
