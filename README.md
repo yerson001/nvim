@@ -18,3 +18,13 @@ git clone [este respositorio]
 :PlugInstall
 reinicie neovim
 ~~~
+## COC-
+~~~
+. https://blog.csdn.net/qq_34548075/article/details/120092169
+
+curl -o- -L https://yarnpkg.com/install.sh | bash
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+source ~/.bashrc
+yarn -v
+
+~~~
