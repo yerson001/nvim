@@ -27,4 +27,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
 yarn -v
 
+. https://codevion.github.io/#!vim/coc.md
+
 ~~~
