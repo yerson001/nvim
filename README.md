@@ -30,3 +30,14 @@ yarn -v
 . https://codevion.github.io/#!vim/coc.md
 
 ~~~
+
+## MOVE
+w h j l
+## SHOW FILES 
+, + m
+## OPEN TERMINAL
+F7
+## COMMNET
+,+ c
+## UNCOMMET
+,+ v
