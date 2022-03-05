@@ -16,7 +16,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   "***************endairline****
   "********theme******
   Plug 'dracula/vim',{'as':'dracula'}
+  Plug 'crusoexia/vim-monokai'
   "*********end_theme***********"
+  "
 
   "**********adicional**********"
   Plug 'junegunn/goyo.vim'"no necesario"
@@ -147,7 +149,8 @@ augroup END
 
 " Main Coloring Configurations
 syntax on
-color dracula
+"color dracula
+color monokai
 "colorscheme dracula
 "colorscheme deus
 "colorscheme monokai_pro 
@@ -178,7 +181,7 @@ set showtabline=2
 set noshowmode
 
 function! ColorDracula()
-  letg:airline_theme = 'dracula'
+  let:airline_theme = 'dracula'
   color dracula
 endfunction
 "**********************endairlineconfig*********************
@@ -243,6 +246,12 @@ function! ColorZazen()
     color zazen
 endfunction
 
+function! ColorMonokai()
+    let g:airline_theme = 'sonokai'
+    color monokai
+endfunction
+
+
 "******************keys******************************"
 nmap <leader>ea :AirlineTheme 
 nmap <leader>0 :call ColorOceanic()<CR>
@@ -255,12 +264,14 @@ nmap <leader>6 :call ColorMolokai()<CR>
 nmap <leader>7 :call ColorDeus()<CR>
 nmap <leader>8 :call ColorGrux()<CR>
 nmap <leader>9 :call ColorMaterial()<CR>
+nmap <leader>l :call ColorMonokai()<CR>
 "**********************************************************"
 "*****************tagbar***********************************"
 let g:tagbar_width = 30
 nmap <leader>w :TagbarToggle<CR>
 "**********************************************************"
 
+let g:airline_theme='dracula'
 "******************NERTHRE**************************"
 let NERDTreeShowHidden=1
 " Exit Vim if NERDTree is the only window left.
@@ -434,11 +445,13 @@ nmap <Leader>r :EasyReplaceWord<CR>
 
 "===================ALE=============
 let g:ale_floating_window_border = ['│', '─', '╭', '╮', '╯', '╰']
-let g:ale_echo_msg_error_str = 'X'
-let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_error_str = '😱❗☠️ ' 
+let g:ale_echo_msg_warning_str = '🥵'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = '⛔'
-let g:ale_sign_warning = '⚠️ '
+let g:ale_sign_error = '😈'
+"let g:ale_sign_warning = '⚠️ '
+"let g:ale_sign_warning = '🥵' 😱 ☠️  👽
+let g:ale_sign_warning = '✫ '
 let b:ale_fixers = ['prettier', 'eslint']
 " Equivalent to the above.
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
