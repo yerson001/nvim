@@ -5,8 +5,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 "open folder -> explorer.exe ."
 call plug#begin('~/.config/nvim/autoload/plugged')
   "************snipes********
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets' 
+  "Plug 'SirVer/ultisnips'
+  "Plug 'honza/vim-snippets' 
   "***************************
   
   "***************airline*******
