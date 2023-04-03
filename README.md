@@ -41,3 +41,17 @@ F7
 ,+ c
 ## UNCOMMET
 ,+ v
+
+
+### neovim
+
+![imh](/img/1.png)
+
+![imh](/img/2.png)
+
+![imh](/img/3.png)
+
+![imh](/img/4.png)
+
+![imh](/img/5.png)
+
