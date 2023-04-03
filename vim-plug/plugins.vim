@@ -76,6 +76,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'dim13/smyck.vim'
   Plug 'morhetz/gruvbox'
   Plug 'sainnhe/gruvbox-material'
+  Plug 'ghifarit53/tokyonight-vim'
   "****************ENDTHEMES*******************************
   "***********************LSP FOR NEOVIM**********************
    "Plug 'neovim/nvim-lspconfig'
@@ -85,6 +86,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'roxma/vim-hug-neovim-rpc'
   Plug 'Yggdroot/indentLine'
    " Use <Tab> and <S-Tab> to navigate through popup menu
+   "
+  
+   
+   "
+   "
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -251,6 +257,15 @@ function! ColorMonokai()
     color monokai
 endfunction
 
+function! ColorTokyo()
+  set termguicolors
+
+    let g:tokyonight_style = 'night' " available: night, storm
+   let g:tokyonight_enable_italic = 1
+    color tokyonight
+    "color monokai
+endfunction
+
 
 "******************keys******************************"
 nmap <leader>ea :AirlineTheme 
@@ -265,6 +280,7 @@ nmap <leader>7 :call ColorDeus()<CR>
 nmap <leader>8 :call ColorGrux()<CR>
 nmap <leader>9 :call ColorMaterial()<CR>
 nmap <leader>l :call ColorMonokai()<CR>
+nmap <leader>k :call ColorTokyo()<CR>
 "**********************************************************"
 "*****************tagbar***********************************"
 let g:tagbar_width = 30
